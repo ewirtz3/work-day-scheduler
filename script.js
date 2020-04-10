@@ -13,6 +13,6 @@ var now = moment().format("hh");
 console.log(now);
 $.each(timeBlock, function (i, hour) {
   console.log(hour);
-  $(this).attr("id");
-  console.log($(this).attr("id"));
+  var hourId = $(this).attr("id");
+  console.log(hourId);
 });
