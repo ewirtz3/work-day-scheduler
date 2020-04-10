@@ -9,7 +9,7 @@ $("#currentDay").text(currentTime);
 
 var timeBlock = $(".hour");
 console.log(timeBlock);
-var now = moment().format("hh");
+var now = moment().format("h");
 console.log(now);
 $.each(timeBlock, function (i, hour) {
   console.log(hour);
