@@ -25,11 +25,11 @@ $.each(timeBlock, function (i, hour) {
 //text area, class = "event"; if Save button clicked, set item to local storage and persist; upon refresh, need to get item from local storage too
 
 $(".saveBtn").on("click", function (event) {
-  console.log(event);
-  console.log(
-    event.target.parentElement.previousElementSibling.children[0].value
-  );
-  // localStorage.setItem("event", $(".event"));
+  var calendarItem =
+    event.target.parentElement.previousElementSibling.children[0].value;
+  localStorage.setItem(event.target.attributes[0].value, calendarItem);
   // var calendarItem = localStorage.getItem("event");
   // $(".event").append(event);
 });
+
+$(document).ready(function () {});
