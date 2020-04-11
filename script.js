@@ -7,18 +7,29 @@ $("#currentDay").text(currentTime);
 //variables for now (as a baseline time, use moment) and HTML time block (to change color relative to now)
 var timeBlock = $(".hour");
 console.log(timeBlock);
-var now = moment().format("h");
+var now = parseInt(moment().format("H"));
 
 //function to check each hour block to see if it is past (gray), present (red), or future (green). parseInt(hourId) <>= now doesn't work, 10 > 1 but 10am is before 1pm...maybe try comparing index in hour array? if hour[i]><=hour[j]; how to do that?
 $.each(timeBlock, function (i, hour) {
-  var hourId = $(this).attr("id");
+  var hourId = parseInt($(this).attr("id"));
   console.log(hourId);
+  if (hourId === now) {
+    $(this).addClass("present");
+  } else if (hourId < now) {
+    $(this).addClass("past");
+  } else if (hourId > now) {
+    $(this).addClass("future");
+  }
 });
 
 //text area, class = "event"; if Save button clicked, set item to local storage and persist; upon refresh, need to get item from local storage too
 
 $(".saveBtn").on("click", function (event) {
-  localStorage.setItem("event", $(".event"));
-  var event = localStorage.getItem("event");
-  $(".event").append(event);
+  console.log(event);
+  console.log(
+    event.target.parentElement.previousElementSibling.children[0].value
+  );
+  // localStorage.setItem("event", $(".event"));
+  // var calendarItem = localStorage.getItem("event");
+  // $(".event").append(event);
 });
