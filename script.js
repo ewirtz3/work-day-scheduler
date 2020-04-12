@@ -26,12 +26,50 @@ $(".saveBtn").on("click", function (event) {
   var calendarItem =
     event.target.parentElement.previousElementSibling.children[0].value;
   localStorage.setItem(event.target.attributes[0].value, calendarItem);
-  // var calendarItem = localStorage.getItem("event");
-  // $(".event").append(event);
 });
 
 $(document).ready(function () {
   for (var i = 0; i < localStorage.length; i++) {
-    console.log(localStorage.getItem(localStorage.key(i)));
+    if (localStorage["9am"] !== null || undefined) {
+      var nineAm = $("<p>" + localStorage["9am"] + "</p>");
+      console.log(nineAm);
+      $("#nineAm").append(nineAm[0].innerText);
+      break;
+    }
+    if (localStorage["10am"] !== null || undefined) {
+      var tenAm = $("<p>" + localStorage["10am"] + "</p>");
+      $("#tenAm").append(tenAm[0].innerText);
+      break;
+    }
+    if (localStorage["11am"] !== null || undefined) {
+      var elevenAm = $("<p>" + localStorage["11am"] + "</p>");
+      $("#elevenAm").append(elevenAm[0].innerText);
+      break;
+    }
+    if (localStorage["12pm"] !== null || undefined) {
+      var twelvePm = $("<p>" + localStorage["12pm"] + "</p>");
+      $("#twelvePm").append(twelvePm[0].innerText);
+      break;
+    }
+    if (localStorage["1pm"] !== null || undefined) {
+      var onePm = $("<p>" + localStorage["1pm"] + "</p>");
+      $("#onePm").append(onePm[0].innerText);
+      break;
+    }
+    if (localStorage["2pm"] !== null || undefined) {
+      var twoPm = $("<p>" + localStorage["2pm"] + "</p>");
+      $("#twoPm").append(twoPm[0].innerText);
+      break;
+    }
+    if (localStorage["3pm"] !== null || undefined) {
+      var threePm = $("<p>" + localStorage["3pm"] + "</p>");
+      $("#threePm").append(threePm[0].innerText);
+      break;
+    }
+    if (localStorage["4pm"] !== null || undefined) {
+      var fourPm = $("<p>" + localStorage["4pm"] + "</p>");
+      $("#fourPm").append(fourPm[0].innerText);
+      break;
+    }
   }
 });
