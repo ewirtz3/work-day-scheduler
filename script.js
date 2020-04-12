@@ -12,11 +12,11 @@ var now = parseInt(moment().format("H"));
 $.each(timeBlock, function (i, hour) {
   var hourId = parseInt($(this).attr("id"));
   if (hourId === now) {
-    $(this).addClass("present");
+    $(this).next().addClass("present");
   } else if (hourId < now) {
-    $(this).addClass("past");
+    $(this).next().addClass("past");
   } else if (hourId > now) {
-    $(this).addClass("future");
+    $(this).next().addClass("future");
   }
 });
 
