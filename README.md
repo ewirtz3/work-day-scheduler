@@ -1,4 +1,4 @@
-# jQuery Work Day Scheduler Homework
+# jQuery Work Day Scheduler
 
 **Objective: Create a dynamic work day scheduler that uses moment.js and local storage to meet the following requirements**
 
